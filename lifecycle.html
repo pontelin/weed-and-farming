@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ライフサイクル</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lifecycle.css">
+
+</head>
+<body>
+    <header>
+        <span class="main-title">ライフサイクル</span><br>
+        <p>草たちはどう生きている？　それぞれの物語をのぞいてみよう。</p>
+    </header>
+    <div class="wrapper">
+        <button class="hamburger" aria-label="メニューを開く">☰</button>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">雑草図鑑</a></li>
+                <li><a href="intro.html">草たちの紹介</a></li>
+                <li id="imakoko"><a href="lifecycle.html">ライフサイクル</a></li>
+                <li><a href="symbio.html">不思議な絆</a></li>
+                <li><a href="magic.html">働く草たち</a></li>
+            </ul>
+        </nav>
+        <!-- ここから草のリストの始まり -->
+        <div class="contents">
+            <div class="weeds-container">                
+                <!-- 一年草 -->
+                    <div class="weed-life">
+                        <p class="lifespan">一年草（いちねんそう）</p>
+                        <img src="img/kyuri2.png" alt="一年草" class="weed-image">
+                        <p class="about-lifespan">一年草は、その名の通り、一年のうちに生まれて育ち、花を咲かせて種を残して終わる植物です。
+                            次の春、また芽を出す準備をする種を残すのが彼らの大事なお仕事です。</p>
+                    </div>
+                <!-- 越年草 -->
+                <div class="weed-life">
+                    <p class="lifespan">越年草（えつねんそう）</p>
+                    <img src="img/onit.png" alt="越年草" class="weed-image">
+                    <p class="about-lifespan">越年草は、秋に芽を出して冬を越し、春になるとぐんぐん成長して花を咲かせ、種を残す植物です。
+                        寒い冬をじっと耐えることで、春の訪れとともに他の植物より早く育ち始めることができます。</p>
+                </div>
+                <!-- 多年草 -->
+                <div class="weed-life">
+                    <p class="lifespan">多年草（たねんそう）</p>
+                    <img src="img/kikyoka.png" alt="多年草" class="weed-image">
+                    <p class="about-lifespan">多年草は、一度植えると何年も花を咲かせたり実をつけたりしてくれる植物です。
+                        毎年少しずつ株が大きくなります。植えっぱなしで楽しめるのは嬉しいポイント。</p>
+                </div>     
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

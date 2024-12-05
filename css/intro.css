@@ -1,0 +1,53 @@
+.weeds-container {
+    display: flex;
+    flex-direction: column; /* 各アイテムを縦方向に並べる */
+    gap: 1rem; /* 各アイテム間の間隔 */
+    padding: 1rem;
+}
+
+.weed-item {
+    display: flex; /* アイテム内を横方向に並べる */
+    gap: 1rem; /* 各要素間の間隔 */
+    align-items: center; /* 高さを揃える */
+    /*border-top: 1px solid #ccc; /* 枠線 */
+    border-bottom: 1px solid #ccc; /* 枠線 */
+    padding: 1rem;
+
+}
+
+.weed-item img {
+    width: 100px; /* 画像の幅を統一 */
+    height: auto; /* アスペクト比を保つ */
+}
+
+.weed-item p {
+    margin: 0; /* 余白を削除 */
+    flex: 1; /* テキスト要素に均等な幅を割り当てる */
+}
+
+.weed-item .description {
+    flex: 5; /* 説明部分に全体幅の50%を割り当てる */
+    text-align: justify; /* 説明文を整列 */
+    padding-left: 1em;
+}
+.name {
+    font-family: 'Kiwi Maru', serif; /* Googleフォント */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) { /* スマホサイズの条件 */
+    .weed-item {
+        /*flex-wrap: wrap; /* アイテムを折り返し可能にする */
+        flex-direction: column; /* 縦方向に並べる */
+    
+    }
+    .weed-item img {
+
+        margin-top: 1rem; /* 上部に余白 */
+    }
+    .weed-item .description {
+        flex-basis: 100%; /* 全幅を占める */
+        margin-top: 0.5rem; /* 上に間隔を追加 */
+    }
+}

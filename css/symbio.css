@@ -1,0 +1,69 @@
+.symbio-container {
+    display: flex;
+    flex-direction: column; /* 各アイテムを縦方向に並べる */
+    gap: 1rem; /* 各アイテム間の間隔 */
+    padding: 1rem;
+    /* 背景画像の指定 */
+    background-image: url(../img/symbio.png);
+    background-size: 80%; /* 背景画像の幅を80%に指定 */
+    background-repeat: no-repeat; /* 繰り返しを防ぐ */
+    background-position: center; /* 中央揃え */
+    /* 背景画像を薄く見せる */
+    background-color: rgba(249, 255, 221, 0.5); /* 背景画像を薄く */
+    background-blend-mode: lighten; /* 背景画像と背景色をブレンド */
+}
+
+.symbio-od {
+    display: flex; /* アイテム内を横方向に並べる */
+    gap: 1rem; /* 各要素間の間隔 */
+    align-items: center; /* 高さを揃える */
+    /*border-top: 1px solid #ccc; /* 枠線 */
+    /*border-bottom: 1px solid #ccc; /* 枠線 */
+    padding: 1rem;
+}
+
+.symbio-ev {
+    display: flex; /* アイテム内を横方向に並べる */
+    flex-direction: row-reverse;/* アイテム内を逆方向に並べる */
+    gap: 1rem; /* 各要素間の間隔 */
+    align-items: center; /* 高さを揃える */
+    /*border-top: 1px solid #ccc; /* 枠線 */
+    /*border-bottom: 1px solid #ccc; /* 枠線 */
+    padding: 1rem;
+}
+
+.text {
+    background-color: rgba(249, 255, 221, 0.5); /* 背景を薄く */
+    border-radius: 30px;
+    flex: 1; /* 幅を割り当てる */
+}
+.text02 {
+    background-color: rgba(249, 255, 221, 0.5); /* 背景を薄く */
+    border-radius: 30px;
+    flex: 2; /* 広めに幅を割り当てる */
+}
+.nontext{
+    flex: 2; /* 幅を割り当てる */
+}
+
+
+
+@media (max-width: 768px) { /* スマホサイズの条件 */
+    .symbio-ev {
+        /*flex-wrap: wrap; /* アイテムを折り返し可能にする */
+        flex-direction: column; /* 縦方向に並べる */
+    }
+    .symbio-od {
+        /*flex-wrap: wrap; /* アイテムを折り返し可能にする */
+        flex-direction: column; /* 縦方向に並べる */
+    }
+
+}
+.symbio-od p {
+    width: 100%;
+    margin: 0; /* 余白を削除 */
+}
+.symbio-ev p {
+    width: 100%;
+    margin: 0; /* 余白を削除 */
+}

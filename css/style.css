@@ -1,0 +1,217 @@
+@import url(sanitize.css);
+@import url(popup.css);
+@import url(menu.css);
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
+body {
+    background-color: #f9ffdd;
+}
+
+header {
+    text-align: center;
+    padding-top: 35px;
+    font-family: 'Kiwi Maru', serif; /* Googleフォント */
+}
+
+.main-title {
+    font-size: 2em; /* 大きい文字サイズ */
+    font-weight: bold; /* 太字 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* テキストに影をつける */
+}
+
+.sub-title {
+    font-size: 1.2em; /* 小さい文字サイズ */
+    margin-left: 10px; /* 主タイトルとの間隔 */
+}
+
+header p {
+    font-size: 20px;
+}
+
+/* ラッパー設定 */
+.wrapper {
+    position: relative; /* nav と contents の重なり調整用 */
+    width: 100%; /* 全体幅 */
+    padding-top: 35px; /* nav を画面上端から適切に下げる余白 */
+}
+
+/* ナビゲーションのスタイル */
+nav {
+    position: absolute; /* wrapper 内で絶対位置指定 */
+    top: 5px; /* contents の枠線の中央に合わせる位置 */
+    left: 50%; /* 水平中央揃え */
+    transform: translateX(-50%); /* 水平方向中央揃え */
+    height: 70px; /* nav の高さ */
+    width: 700px; /* nav の幅 */
+    background-color: #f9ffdd; /* nav の背景色 */
+    z-index: 10; /* contents の上に表示 */
+    display: flex; /* リストアイテムの配置調整 */
+    justify-content: center; /* 水平方向中央寄せ */
+    align-items: center; /* 垂直方向中央揃え */
+    border: 10px solid #fbc8ac;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  軽い影を追加 */
+    border-radius: 30px; /* nav の角を丸く */
+}
+
+/* nav 内のリスト */
+nav ul {
+    display: flex;
+    list-style: none; /* マーカーを削除 */
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* リストアイテム間のスペース */
+    color: black;
+    font-family: 'Kiwi Maru', serif;
+}
+
+nav ul li {
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px; /* 文字の周りに3pxの余白を追加 */
+}
+/*ナビゲーションの現在位置を、色で示す*/
+#imakoko {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid #fbc8ac; 
+    
+}
+/* アンダーラインを消す */
+a {
+    text-decoration: none; 
+}
+a:visited {
+    color: inherit; /* 親要素の色を引き継ぐ */
+}
+
+/* コンテンツ枠線 */
+.contents {
+    width: 90%; /* コンテンツの幅 */
+    /*min-width: 730px; 最小幅を制限 */
+    
+    margin: 0 auto; /* 水平方向中央寄せ */
+    padding: 20px;
+    border: 10px solid #fbc8ac; /* 枠線 */
+    border-radius: 30px; /* 枠線の角を丸く */
+    background-color: #f9ffdd; /* 背景色 */
+    box-sizing: border-box; /* パディングを含めた計算 */
+    position: relative; /* nav との重なりに影響しない設定 */
+    z-index: 1; /* nav より背面に配置 */
+    margin-bottom: 20px;
+}
+.contents h2 {
+    font-family: 'Kiwi Maru', serif; /* Googleフォント */
+    font-size: 1.2em;
+    text-align: center;
+    margin: 2em;
+    
+}
+
+.contents h3 {
+    font-family: 'Kiwi Maru', serif; /* Googleフォント */
+    font-size: 1.2em;
+    text-align: center;
+    margin: 1em;
+}
+
+.contents p {
+    text-align: center;
+}
+.garden {
+    display: flex;
+    flex-wrap: wrap-reverse; /* 折り返しの順番を逆にする */
+    gap: 10px; /* 各要素間のスペース */
+    padding: 20px;
+    /*background-color: #c9c47c; /* 庭の背景色 */
+    border-radius: 30px;
+}
+
+.weed {
+    position: relative; /* 名前を画像の中央に配置する基準 */
+    height: 100px; /* 雑草の高さ */
+    transform: translate(
+      calc(var(--random-x, 0px)),
+      calc(var(--random-y, 0px))
+    ); /* ランダムなズレ */
+}
+
+.weed img {
+    width: 100%; /* 画像を要素幅いっぱいにする */
+    height: 100%; /* 画像の高さ */
+    object-fit: cover; /* 画像を枠内にフィット */
+    cursor: pointer; /*指マークにする*/
+}
+
+.weed-name {
+    position: absolute; /* 名前を画像上に配置 */
+    top: 50%; /* 縦方向の中央 */
+    left: 50%; /* 横方向の中央 */
+    transform: translate(-50%, -50%); /* 中央揃え */
+    font-size: 14px; /* 名前のフォントサイズ */
+    font-weight: bold;
+    color: rgb(0, 0, 0); /* テキスト色 */
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
+    /*background-color: rgba(255, 255, 255, 0.3); /* 半透明の背景色 */
+    padding: 2px 5px; /* 背景の余白 */
+    border-radius: 5px; /* 背景の角丸 */
+    white-space: nowrap; /* 折り返さない */
+    overflow: hidden; /* はみ出しを隠す */
+    text-overflow: ellipsis; /* 長すぎる場合は「...」を表示 */
+    pointer-events: none; /* クリックできないようにする */
+    font-family: 'Kiwi Maru', serif; /* Googleフォント */
+}
+
+/* ランダムなズレをCSS変数で定義 */
+.weed:nth-child(odd) {
+    --random-x: -10px; /* 左にズレ */
+    --random-y: 5px; /* 下にズレ */
+}
+
+.weed:nth-child(even) {
+    --random-x: 10px; /* 右にズレ */
+    --random-y: -10px; /* 上にズレ */
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    display: none; /* デフォルトは非表示 */
+    position: absolute;
+    top: -30px;
+    left: 50px;
+    background: none;
+    border: none;
+    color: #fbc8ac;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 11;
+    
+}
+
+/* スマホサイズ用 */
+@media screen and (max-width: 780px) {
+    nav {
+        display: none; /* PC用は非表示 */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hamburger {
+        display: block; /* スマホでは表示 */
+    }
+}
+
+
+@media (max-width: 780px) {
+
+    
+    header p{
+        font-size: 14px;
+    }
+
+    
+}
+
+

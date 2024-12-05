@@ -1,0 +1,67 @@
+.magic-container {
+    display: flex;
+    flex-direction: column; /* 各アイテムを縦方向に並べる */
+    gap: 1rem; /* 各アイテム間の間隔 */
+    padding: 1rem;
+}
+
+.magic-od {
+    display: flex; /* アイテム内を横方向に並べる */
+    gap: 1rem; /* 各要素間の間隔 */
+    align-items: center; /* 高さを揃える */
+    /*border-top: 1px solid #ccc; /* 枠線 */
+    /*border-bottom: 1px solid #ccc; /* 枠線 */
+    padding: 1rem;
+}
+
+.magic-ev {
+    display: flex; /* アイテム内を横方向に並べる */
+    flex-direction: row-reverse;/* アイテム内を逆方向に並べる */
+    gap: 1rem; /* 各要素間の間隔 */
+    align-items: center; /* 高さを揃える */
+    /*border-top: 1px solid #ccc; /* 枠線 */
+    /*border-bottom: 1px solid #ccc; /* 枠線 */
+    padding: 1rem;
+}
+
+.magic-od img {
+    width: 45%; /* 画像の幅を統一 */
+    height: auto; /* アスペクト比を保つ */
+    border-radius: 30px;
+}
+.magic-ev img {
+    width: 45%; /* 画像の幅を統一 */
+    height: auto; /* アスペクト比を保つ */
+    border-radius: 30px;
+}
+.magic-od p {
+    margin: 0; /* 余白を削除 */
+}
+.magic-ev p {
+    margin: 0; /* 余白を削除 */
+}
+.midasi {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-family: 'Kiwi Maru', serif; /* Googleフォント */
+}
+@media (max-width: 768px) { /* スマホサイズの条件 */
+    .magic-ev {
+        /*flex-wrap: wrap; /* アイテムを折り返し可能にする */
+        flex-direction: column; /* 縦方向に並べる */
+    }
+    .magic-od {
+        /*flex-wrap: wrap; /* アイテムを折り返し可能にする */
+        flex-direction: column; /* 縦方向に並べる */
+    }
+    .magic-od img {
+        margin-top: 1rem; /* 上部に余白 */
+        width: 90%;
+    }
+    .magic-ev img {
+        margin-top: 1rem; /* 上部に余白 */
+        width: 90%;
+    }
+}
